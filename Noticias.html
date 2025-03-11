@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Google Empresarial</title>
+        <link rel="stylesheet" href="estilodenoticias.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+        <link id="favicon" rel="icon" type="image/x-icon" href="img/logocico2.ico">
+    </head>
+    <body>
+        <header class="navbar">
+            <img src="img/logoclaro2.png" alt="Google Logo" class="logo" id="logo">
+    
+            <nav class="nav-links">
+                <a href="Index.html" class="nav-item">
+                    <img src="img/grupo negro.png" alt="Acerca de" class="icon" id="icon-grupo">
+                    Acerca de
+                </a>
+                <a href="Productos.html" class="nav-item">
+                    <img src="img/paquete negro.png" alt="Productos" class="icon" id="icon-paquete">
+                    Productos
+                </a>
+                <a href="Precios.html" class="nav-item">
+                    <img src="img/icono precio.png" alt="Precios" class="icon">
+                    Precios
+                </a>
+                <a href="Noticias.html" class="nav-item">
+                    <img src="img/noticiasnegro.png" alt="Noticias" class="icon" id="icon-noticias">
+                    Noticias
+                </a>
+            </nav>      <div class="toggle-container">
+            <input type="checkbox" id="mode-toggle">
+            <label for="mode-toggle" class="toggle-label">
+                <div class="toggle-slider">
+                    <img src="img/sol.png" alt="Modo Claro" class="mode-icon" id="icon-sol">
+                    <img src="img/luna.png" alt="Modo Oscuro" class="mode-icon hidden" id="icon-luna">
+                </div>
+            </label>
+        </div>
+    </header>
+
+    <!-- Encabezado -->
+    <section>
+        <img class="icono" id="icono-noticias" src="img/noticiasnegro.png" alt="Noticias">
+        <span>Noticias de la empresa</span>
+    </section>
+
+    <!-- Título -->
+    <h1 id="titulo" class="h1d">Iniciativas</h1>
+
+<!-- Menú de Categorías con flechas -->
+<div class="categorias-container">
+    <button id="btn-izquierda" class="categoria-btn">⬅</button>
+    <nav class="categorias">
+        <ul id="menu">
+            <li data-categoria="accesibilidad">Accesibilidad</li>
+            <li data-categoria="arts-culture">Arts & Culture</li>
+            <li data-categoria="desarrolladores">Desarrolladores</li>
+            <li data-categoria="bienestar-digital">Bienestar Digital</li>
+            <li data-categoria="diversidad-inclusion">Diversidad e Inclusión</li>
+            <li data-categoria="emprendedores">Emprendedores</li>
+            <li data-categoria="google-ads">Google Ads</li>
+            <li data-categoria="google-news">Google News Initiative</li>
+            <li data-categoria="google-org">Google.org</li>
+            <li data-categoria="educacion">Educación</li>
+            <li data-categoria="usuarios">Próximos mil millones de usuarios</li>
+            <li data-categoria="pymes">Pequeñas y Medianas Empresas</li>
+            <li data-categoria="sustentabilidad">Sustentabilidad</li>
+        </ul>
+    </nav>
+    <button id="btn-derecha" class="categoria-btn">➡</button>
+</div>
+
+    <!-- Sección de noticias principales -->
+    <section id="noticia-destacada">
+        <img id="noticia-imagen" src="" alt="Noticia destacada">
+        <div class="noticia-info">
+            <h2 id="noticia-titulo"></h2>
+            <p id="noticia-descripcion"></p>
+            <a id="leer-articulo" href="#" target="_blank">Leer artículo →</a>
+        </div>
+    </section>
+
+    <!-- Tarjetas de noticias -->
+    <section id="noticias-container"></section>
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="img/logoclaro2.png" alt="Logo Claro" class="logo">
+        </div>
+        <hr class="footer-line">
+    
+        <div class="footer-content">
+            <!-- Acerca de (izquierda) -->
+            <div class="footer-section footer-left">
+                <h3 class="footer-title">
+                    <a href="Index.html" class="no-link-style">
+                        <img src="img/grupo negro.png" alt="Grupo" class="icon acerca-icon">
+                        Acerca de
+                    </a>
+                </h3>
+                <p><a href="Index.html" class="no-link-style">Nuestra misión es organizar la información del mundo para que todos puedan acceder a ella y usarla.</a></p>
+            </div>
+    
+            <!-- Productos (centrado) -->
+            <div class="footer-section footer-center">
+                <h3 class="footer-title center-title">
+                    <a href="Productos.html" class="no-link-style">
+                        <img src="img/paquete negro.png" alt="Paquete" class="icon productos-icon">
+                        Productos
+                    </a>
+                </h3>
+                <ul>
+                    <li>Aplicaciones incluidas</li><br>
+                    <li><a href="https://mail.google.com/" target="_blank" class="no-link-style">Gmail</a></li><br>
+                    <li><a href="https://translate.google.com" target="_blank" class="no-link-style">Translate</a></li><br>
+                    <li><a href="https://drive.google.com/" target="_blank" class="no-link-style">Drive</a></li><br>
+                    <li><a href="https://meet.google.com/" target="_blank" class="no-link-style">Meet</a></li><br>
+                    <li><a href="https://docs.google.com/document/" target="_blank" class="no-link-style">Documents</a></li><br>
+                    <li><a href="https://docs.google.com/spreadsheets/" target="_blank" class="no-link-style">Hoja de Cálculo</a></li><br>
+                    <li><a href="https://sites.google.com/" target="_blank" class="no-link-style">Sites</a></li><br>
+                    <li><a href="https://calendar.google.com/" target="_blank" class="no-link-style">Calendario</a></li><br>
+                    <li><a href="https://forms.google.com/" target="_blank" class="no-link-style">Forms</a></li>
+                </ul>
+            </div>
+
+              <!-- Noticias (nuevo, derecha) -->
+              <div class="footer-section footer-right">
+                <h3 class="footer-title">
+                    <a href="Noticias.html" class="no-link-style">
+                        <img src="img/noticiasnegro.png" alt="Noticias" class="icon noticias-icon">
+                        Noticias
+                    </a>
+                </h3>
+                <p><a href="Noticias.html" class="no-link-style">Últimas novedades y actualizaciones</a></p>
+            </div>
+    
+            <!-- Precios (derecha) -->
+            <div class="footer-section footer-right">
+                <h3 class="footer-title right-title">
+                    <a href="Precios.html" class="no-link-style">
+                        <img src="img/icono precio.png" alt="Precio" class="icon precios-icon">
+                        Precios
+                    </a>
+                </h3>
+                <p><a href="Precios.html" class="no-link-style">Elija una edición</a></p>
+            </div>
+            
+        </div>
+    </footer>
+
+        <script src="scriptnoticias.js"></script>
+    </body>
+    </html>

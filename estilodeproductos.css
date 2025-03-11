@@ -1,0 +1,451 @@
+* {
+
+    font-family: 'Inder', sans-serif;
+}
+
+body {
+    font-family: 'Inder', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.logo {
+    height: 80px;
+    transition: opacity 0.3s ease-in-out; /* Suaviza el cambio de imagen */
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: black;
+    font-size: 22px; /* Tamaño del texto aumentado */
+    transition: color 0.3s;
+}
+
+.nav-item img {
+    height: 30px; /* Aumentamos el tamaño de los iconos */
+    transition: opacity 0.3s;
+}
+
+.toggle-container {
+    position: relative;
+}
+
+/* Ocultamos el input para estilizarlo manualmente */
+#mode-toggle {
+    display: none;
+}
+
+/* Estilizamos el botón de cambio de modo */
+.toggle-label {
+    width: 110px;  /* Más largo */
+    height: 50px;  /* Más alto */
+    background-color: #EC6A4A;
+    border-radius: 30px; /* Más redondeado */
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+/* La parte deslizante */
+.toggle-slider {
+    width: 40px;  /* Más grande */
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 5px; /* Empieza en el lado izquierdo */
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Íconos de sol y luna más grandes */
+.mode-icon {
+    height: 35px; /* Tamaño aumentado */
+    width: 35px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Modo oscuro */
+.dark-mode {
+    background-color: #242424;
+    color: white;
+}
+
+.dark-mode .nav-item {
+    color: white;
+}
+
+/* Cambiar los iconos en modo oscuro */
+.dark-mode #icon-grupo {
+    content: url('img/grupoblanco.png');
+}
+
+.dark-mode #icon-paquete {
+    content: url('img/paqueteblanco.png');
+}
+
+/* Cambiar el icono de Noticias en modo oscuro */
+.dark-mode #icon-noticias {
+    content: url('img/noticiasblanco.png');
+}
+
+/* Cambiar el botón en modo oscuro */
+.dark-mode .toggle-label {
+    background-color: #3A3737;
+}
+
+/* Mover la parte deslizante a la derecha */
+.dark-mode .toggle-slider {
+    transform: translateX(65px); /* Mueve la bolita más a la derecha */
+}
+
+/* ===== Estilos de la sección de productos ===== */
+.productos {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.titulo-productos {
+    font-size: 24px;
+    margin-bottom: 30px;
+    transition: color 0.3s;
+    top: -70px;
+    position: relative;
+}
+
+/* Contenedor de las tarjetas */
+.contenedor-apps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Filas con flexbox */
+.fila {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+}
+
+.fila-central {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-top: -20px; /* Subimos la fila central */
+}
+
+/* Ajuste para separar las cartas laterales */
+.fila .carta-app:first-child {
+    margin-right: 60px; /* Separa la carta izquierda del centro */
+    margin-top: 70px;
+}
+
+.fila .carta-app:last-child {
+    margin-left: 60px; /* Separa la carta derecha del centro */
+    margin-top: 70px;
+}
+
+
+/* Tarjetas de las apps */
+.carta-app {
+    background-color: #D2DEE8;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    top: -90px;
+    position: relative;
+    transform: translateY(30px);
+}
+
+
+/* Centrar la carta del medio */
+.central {
+    grid-column: 2;
+    transform: translateY(10px); /* Lo bajamos un poco */
+}
+
+/* Imágenes dentro de las tarjetas */
+.carta-app img {
+    width: 150px;
+    height: auto;
+}
+
+/* Animación de aparición */
+@keyframes subir {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modo oscuro */
+.dark-mode .titulo-productos {
+    color: white;
+}
+
+.dark-mode .carta-app {
+    background-color: #3A3737;
+}
+
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    padding: 50px 20px;
+}
+
+/* Cada fila (una sección con imagen y contenido) */
+.fila {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    width: 100%;
+    gap: 30px;
+}
+
+/* Imagen grande */
+.imagen-fondo {
+    width: 60%;
+    border-radius: 10px;
+}
+
+/* Contenido con icono, texto y botón */
+.contenido {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+/* Icono dentro del cuadro pequeño */
+.icono-card {
+    background-color: #D2DEE8;
+    padding: 12px;
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icono */
+.icono-card img {
+    width: 100%;
+}
+
+/* Texto */
+.texto {
+    font-size: 18px;
+    color: black;
+    text-align: left;
+}
+
+/* Botón de Acceder */
+.btn-acceder {
+    background-color: #EC6A4A;
+    color: black;  /* Letras negras en modo claro */
+    border: none;
+    padding: 12px 35px;  /* Botón más largo */
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+/* Animación de aparición */
+.fila {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Clase activada con JS */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modo oscuro */
+.dark-mode .icono-card {
+    background-color: #3A3737;
+}
+
+.dark-mode .texto {
+    color: white;
+}
+
+.dark-mode .btn-acceder {
+    background-color: white;
+    color: black;
+}
+
+/* ===== Estilos generales del pie de página ===== */
+.footer {
+    background-color: #D9D9D9;
+    padding: 30px 20px;
+    text-align: left;
+    font-family: 'Inder', sans-serif; /* Aplicando la fuente */
+}
+
+/* Logo */
+.footer-logo {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 50px; /* Más ancho horizontalmente */
+    height: auto;
+}
+
+/* Línea divisoria */
+.footer-line {
+    border: none;
+    border-top: 1px solid #b0b0b0;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de las secciones */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Estilos generales de cada sección */
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Alineación específica */
+.footer-left {
+    text-align: left;
+}
+
+.footer-center {
+    text-align: center; /* Centra la lista de productos */
+}
+
+.footer-right {
+    text-align: right; /* Mueve la sección de precios a la derecha */
+    left: -30px;
+}
+
+/* Estilos de los títulos */
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaciado entre icono y texto */
+    margin-bottom: 10px;
+}
+
+.center-title {
+    justify-content: center; /* Centra el título de Productos */
+}
+
+.right-title {
+    justify-content: flex-end; /* Alinea el título de Precios a la derecha */
+}
+
+/* Iconos */
+.icon {
+    width: 24px;
+    height: auto;
+}
+
+/* Texto */
+p, li {
+    font-size: 19px;
+    margin: 5px 0;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* ===== MODO OSCURO ===== */
+.dark-mode .footer {
+    background-color: #222;
+}
+
+.dark-mode .footer-logo .logo {
+    content: url("img/logoclaro2.png"); /* Cambia el logo */
+}
+
+.dark-mode .acerca-icon {
+    content: url("img/grupoblanco.png"); /* Cambia el icono de acerca de */
+}
+
+.dark-mode .productos-icon {
+    content: url("img/paqueteblanco.png"); /* Cambia el icono de productos */
+}
+
+/* Cambiar el icono de Noticias en modo oscuro */
+.dark-mode .noticias-icon {
+    content: url('img/noticiasblanco.png');
+}
+
+
+.no-link-style {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Usa el color del texto normal */
+}
+
+
+.dark-mode h3, 
+.dark-mode p, 
+.dark-mode li {
+    color: white; /* Letras blancas */
+}
+
+.dark-mode .footer-line {
+    border-top: 1px solid #555;
+}

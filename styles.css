@@ -1,0 +1,370 @@
+body {
+    font-family: 'Inder', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.logo {
+    height: 80px;
+    transition: opacity 0.3s ease-in-out; /* Suaviza el cambio de imagen */
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: black;
+    font-size: 22px; /* Tamaño del texto aumentado */
+    transition: color 0.3s;
+}
+
+.nav-item img {
+    height: 30px; /* Aumentamos el tamaño de los iconos */
+    transition: opacity 0.3s;
+}
+
+.toggle-container {
+    position: relative;
+}
+
+/* Ocultamos el input para estilizarlo manualmente */
+#mode-toggle {
+    display: none;
+}
+
+/* Estilizamos el botón de cambio de modo */
+.toggle-label {
+    width: 110px;  /* Más largo */
+    height: 50px;  /* Más alto */
+    background-color: #EC6A4A;
+    border-radius: 30px; /* Más redondeado */
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+/* La parte deslizante */
+.toggle-slider {
+    width: 40px;  /* Más grande */
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 5px; /* Empieza en el lado izquierdo */
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Íconos de sol y luna más grandes */
+.mode-icon {
+    height: 35px; /* Tamaño aumentado */
+    width: 35px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Modo oscuro */
+.dark-mode {
+    background-color: #242424;
+    color: white;
+}
+
+.dark-mode .nav-item {
+    color: white;
+}
+
+/* Cambiar los iconos en modo oscuro */
+.dark-mode #icon-grupo {
+    content: url('img/grupoblanco.png');
+}
+
+.dark-mode #icon-paquete {
+    content: url('img/paqueteblanco.png');
+}
+
+/* Cambiar el icono de Noticias en modo oscuro */
+.dark-mode #icon-noticias {
+    content: url('img/noticiasblanco.png');
+}
+
+/* Cambiar el botón en modo oscuro */
+.dark-mode .toggle-label {
+    background-color: #3A3737;
+}
+
+/* Mover la parte deslizante a la derecha */
+.dark-mode .toggle-slider {
+    transform: translateX(65px); /* Mueve la bolita más a la derecha */
+}
+
+.mission-section {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+.mission-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: black; /* Texto negro en modo claro */
+    transition: color 0.3s ease-in-out;
+}
+
+.mission-image {
+    width: 100%;
+    max-width: 800px; /* Ajustamos el tamaño de la imagen */
+    display: block;
+    margin: 20px auto;
+}
+
+/* 🌙 Cambios en modo oscuro */
+.dark-mode .mission-text {
+    color: white; /* Texto blanco en modo oscuro */
+}
+
+/* 🌙 Efecto de sombra en los bordes en modo oscuro */
+.dark-mode .mission-image {
+    position: relative;
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+}
+/* Importar fuente Inder */
+@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+
+/* Contenedor principal */
+.productos {
+    text-align: center;
+    margin: 50px 0; /* Un poco más de margen arriba y abajo */
+}
+
+/* Título */
+.productos-titulo {
+    font-size: 26px; /* Ligero aumento de tamaño */
+    font-weight: bold;
+    color: black;
+    transition: color 0.3s ease-in-out;
+    font-family: 'Inder', sans-serif; /* Aplicar fuente Inder */
+}
+
+/* Botón */
+.btn-explorar {
+    background-color: #EC6A4A;
+    color: white;
+    font-size: 18px;
+    padding: 14px 26px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-family: 'Inder', sans-serif; /* Aplicar fuente Inder */
+}
+
+.btn-explorar:hover {
+    background-color: #d1583d;
+}
+
+/* Contenedor de productos */
+.productos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* Aumenta aún más la separación entre cartas */
+    margin-top: 40px;
+}
+
+/* Cartas de los productos */
+.producto-card {
+    background-color: #D2DEE8;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    width: 200px; /* Más grandes */
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efecto al pasar el mouse */
+.producto-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imágenes dentro de las cartas */
+.producto-card img {
+    width: 140px; /* Más grandes */
+    height: auto;
+}
+
+/* ===== MODO OSCURO ===== */
+.dark-mode .producto-card {
+    background-color: #3A3737;
+}
+
+.dark-mode .btn-explorar {
+    background-color: white;
+    color: black;
+}
+
+.dark-mode .btn-explorar:hover {
+    background-color: #e0e0e0;
+}
+
+/* Texto principal en modo oscuro */
+.dark-mode .productos-titulo {
+    color: white;
+}
+
+/* ===== Estilos generales del pie de página ===== */
+.footer {
+    background-color: #D9D9D9;
+    padding: 30px 20px;
+    text-align: left;
+    font-family: 'Inder', sans-serif; /* Aplicando la fuente */
+}
+
+/* Logo */
+.footer-logo {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 50px; /* Más ancho horizontalmente */
+    height: auto;
+}
+
+/* Línea divisoria */
+.footer-line {
+    border: none;
+    border-top: 1px solid #b0b0b0;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de las secciones */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Estilos generales de cada sección */
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Alineación específica */
+.footer-left {
+    text-align: left;
+}
+
+.footer-center {
+    text-align: center; /* Centra la lista de productos */
+}
+
+.footer-right {
+    text-align: right; /* Mueve la sección de precios a la derecha */
+    left: -30px;
+}
+
+/* Estilos de los títulos */
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaciado entre icono y texto */
+    margin-bottom: 10px;
+}
+
+.center-title {
+    justify-content: center; /* Centra el título de Productos */
+}
+
+.right-title {
+    justify-content: flex-end; /* Alinea el título de Precios a la derecha */
+}
+
+/* Iconos */
+.icon {
+    width: 24px;
+    height: auto;
+}
+
+/* Texto */
+p, li {
+    font-size: 19px;
+    margin: 5px 0;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* ===== MODO OSCURO ===== */
+.dark-mode .footer {
+    background-color: #222;
+}
+
+.dark-mode .footer-logo .logo {
+    content: url("img/logoclaro2.png"); /* Cambia el logo */
+}
+
+.dark-mode .acerca-icon {
+    content: url("img/grupoblanco.png"); /* Cambia el icono de acerca de */
+}
+
+.dark-mode .productos-icon {
+    content: url("img/paqueteblanco.png"); /* Cambia el icono de productos */
+}
+
+/* Cambiar el icono de Noticias en modo oscuro */
+.dark-mode .noticias-icon {
+    content: url('img/noticiasblanco.png');
+}
+
+
+.no-link-style {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Usa el color del texto normal */
+}
+
+
+.dark-mode h3, 
+.dark-mode p, 
+.dark-mode li {
+    color: white; /* Letras blancas */
+}
+
+.dark-mode .footer-line {
+    border-top: 1px solid #555;
+}

@@ -1,0 +1,540 @@
+* {
+
+    font-family: 'Inder', sans-serif;
+}
+
+body {
+    font-family: 'Inder', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: normal;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.logo {
+    height: 80px;
+    transition: opacity 0.3s ease-in-out; /* Suaviza el cambio de imagen */
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: black;
+    font-size: 22px; /* Tamaño del texto aumentado */
+    transition: color 0.3s;
+}
+
+.nav-item img {
+    height: 30px; /* Aumentamos el tamaño de los iconos */
+    transition: opacity 0.3s;
+}
+
+.toggle-container {
+    position: relative;
+}
+
+/* Ocultamos el input para estilizarlo manualmente */
+#mode-toggle {
+    display: none;
+}
+
+/* Estilizamos el botón de cambio de modo */
+.toggle-label {
+    width: 110px;  /* Más largo */
+    height: 50px;  /* Más alto */
+    background-color: #EC6A4A;
+    border-radius: 30px; /* Más redondeado */
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+/* La parte deslizante */
+.toggle-slider {
+    width: 40px;  /* Más grande */
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 5px; /* Empieza en el lado izquierdo */
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Íconos de sol y luna más grandes */
+.mode-icon {
+    height: 35px; /* Tamaño aumentado */
+    width: 35px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Modo oscuro */
+.dark-mode {
+    background-color: #242424;
+    color: white;
+}
+
+.dark-mode .nav-item {
+    color: white;
+}
+
+/* Cambiar los iconos en modo oscuro */
+.dark-mode #icon-grupo {
+    content: url('img/grupoblanco.png');
+}
+
+.dark-mode #icon-paquete {
+    content: url('img/paqueteblanco.png');
+}
+
+/* Cambiar el icono de Noticias en modo oscuro */
+.dark-mode #icon-noticias {
+    content: url('img/noticiasblanco.png');
+}
+
+/* Cambiar el botón en modo oscuro */
+.dark-mode .toggle-label {
+    background-color: #3A3737;
+}
+
+/* Mover la parte deslizante a la derecha */
+.dark-mode .toggle-slider {
+    transform: translateX(65px); /* Mueve la bolita más a la derecha */
+}
+
+section {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    left: 50px;
+    position: relative;
+}
+
+section img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.dark-mode .icono{
+    content: url('img/noticiasblanco.png');
+}
+
+
+
+/* Título */
+.h1d {
+    padding: 10px;
+    left: 50px;
+    position: relative;
+}
+
+/* 🟠 Contenedor del carrusel */
+.categorias-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 🔹 Botones de navegación (flechas) */
+.categoria-btn {
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px 15px;
+    position: absolute;
+    z-index: 10;
+    transition: background 0.3s ease-in-out;
+}
+
+.categoria-btn:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Posiciones de las flechas */
+#btn-izquierda { left: 60px; }
+#btn-derecha { right: 60px; }
+
+/* 🔹 Estilos del carrusel */
+.categorias {
+    display: flex;
+    overflow: hidden;
+    width: 80%; /* Ocupará solo el 80% del contenedor */
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+
+/* 🔹 Lista de categorías */
+.categorias ul {
+    display: flex;
+    gap: 25px; /* Más espacio entre categorías */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* 🔹 Categorías individuales */
+.categorias li {
+    flex: 0 0 auto;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    white-space: nowrap; /* Evita que el texto pase a otra línea */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Efecto al hacer hover en categorías */
+.categorias li:hover {
+    transform: scale(1.1);
+}
+
+/* 🔥 Línea inferior de la categoría seleccionada */
+.categorias li.selected {
+    color: #EC6A4A;
+}
+
+.categorias li.selected::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: #EC6A4A;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* 🌙 Modo oscuro */
+.dark-mode .categoria-btn {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .categoria-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.dark-mode .categorias li {
+    color: white;
+}
+
+.dark-mode .categorias li.selected {
+    color: white;
+}
+
+.dark-mode .categorias li.selected::after {
+    background: white;
+}
+
+
+/* Noticia destacada */
+#noticia-destacada {
+    display: flex;
+    padding: 20px;
+}
+
+#noticia-destacada img {
+    width: 40%;
+    border-radius: 5px;
+}
+
+.noticia-info {
+    padding: 20px;
+    top: -60px;
+    position: relative;
+}
+
+#leer-articulo {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dark-mode #leer-articulo {
+    color: white;
+}
+
+/* Tarjetas */
+#noticias-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 🔺 3 columnas */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Miniatura de las noticias en las tarjetas */
+.miniatura {
+    width: 80px; /* Tamaño pequeño */
+    height: 80px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+/* 🟠 Tarjetas con tamaño fijo */
+.noticia-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+    width: 80%;
+    height: 280px; /* 🔺 Todas las tarjetas tendrán la misma altura */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✨ Efecto hover con sombra */
+.noticia-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔥 Efecto de difuminado en los bordes */
+.noticia-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.noticia-card:hover::before {
+    opacity: 1;
+}
+
+/* 🖼️ Imagen de tamaño fijo */
+.miniatura {
+    width: 100%;
+    height: 150px; /* 🔺 Todas las imágenes tienen el mismo tamaño */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 🎯 Ajustes del texto */
+.noticia-texto {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.noticia-card h3 {
+    font-size: 18px; /* 🔺 Agrandé el título */
+    color: #000000;
+    margin: 5px 0;
+}
+
+.noticia-card p {
+    font-size: 14px; /* 🔺 Agrandé el texto */
+    color: black;
+    margin: 5px 0;
+}
+
+/* ➡ Flecha para entrar a la noticia */
+.noticia-link {
+    font-size: 18px;
+    color: #EC6A4A;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* 💨 Animación sutil en la flecha */
+.noticia-link:hover {
+    transform: translateX(5px);
+    color: #d14a2e;
+}
+
+/* 🌙 Modo oscuro */
+.dark-mode .noticia-card {
+    background: #333;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .noticia-card h3 {
+    color: white;
+}
+
+.dark-mode .noticia-card p {
+    color: white;
+}
+
+.dark-mode .noticia-link {
+    color: white;
+}
+
+.dark-mode .noticia-link:hover {
+    color: #EC6A4A;
+}
+
+
+/* ===== Estilos generales del pie de página ===== */
+.footer {
+    background-color: #D9D9D9;
+    padding: 30px 20px;
+    text-align: left;
+    font-family: 'Inder', sans-serif; /* Aplicando la fuente */
+}
+
+/* Logo */
+.footer-logo {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 50px; /* Más ancho horizontalmente */
+    height: auto;
+}
+
+/* Línea divisoria */
+.footer-line {
+    border: none;
+    border-top: 1px solid #b0b0b0;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de las secciones */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Estilos generales de cada sección */
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Alineación específica */
+.footer-left {
+    text-align: left;
+}
+
+.footer-center {
+    text-align: center; /* Centra la lista de productos */
+}
+
+.footer-right {
+    text-align: right; /* Mueve la sección de precios a la derecha */
+    left: -30px;
+}
+
+/* Estilos de los títulos */
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaciado entre icono y texto */
+    margin-bottom: 10px;
+}
+
+.center-title {
+    justify-content: center; /* Centra el título de Productos */
+}
+
+.right-title {
+    justify-content: flex-end; /* Alinea el título de Precios a la derecha */
+}
+
+/* Iconos */
+.icon {
+    width: 24px;
+    height: auto;
+}
+
+/* Texto */
+p, li {
+    font-size: 19px;
+    margin: 5px 0;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* ===== MODO OSCURO ===== */
+.dark-mode .footer {
+    background-color: #222;
+}
+
+.dark-mode .footer-logo .logo {
+    content: url("img/logoclaro2.png"); /* Cambia el logo */
+}
+
+.dark-mode .acerca-icon {
+    content: url("img/grupoblanco.png"); /* Cambia el icono de acerca de */
+}
+
+.dark-mode .productos-icon {
+    content: url("img/paqueteblanco.png"); /* Cambia el icono de productos */
+}
+
+/* Cambiar el icono de Noticias en modo oscuro */
+.dark-mode .noticias-icon {
+    content: url('img/noticiasblanco.png');
+}
+
+
+.no-link-style {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Usa el color del texto normal */
+}
+
+
+.dark-mode h3, 
+.dark-mode p, 
+.dark-mode li {
+    color: white; /* Letras blancas */
+}
+
+.dark-mode .footer-line {
+    border-top: 1px solid #555;
+}
+

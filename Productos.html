@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Google Empresarial</title>
+        <link rel="stylesheet" href="estilodeproductos.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+        <link id="favicon" rel="icon" type="image/x-icon" href="img/logocico2.ico">
+    </head>
+    <body>
+        <header class="navbar">
+            <img src="img/logoclaro2.png" alt="Google Logo" class="logo" id="logo">
+    
+            <nav class="nav-links">
+                <a href="Index.html" class="nav-item">
+                    <img src="img/grupo negro.png" alt="Acerca de" class="icon" id="icon-grupo">
+                    Acerca de
+                </a>
+                <a href="Productos.html" class="nav-item">
+                    <img src="img/paquete negro.png" alt="Productos" class="icon" id="icon-paquete">
+                    Productos
+                </a>
+                <a href="Precios.html" class="nav-item">
+                    <img src="img/icono precio.png" alt="Precios" class="icon">
+                    Precios
+                </a>
+                <a href="Noticias.html" class="nav-item">
+                    <img src="img/noticiasnegro.png" alt="Noticias" class="icon" id="icon-noticias">
+                    Noticias
+                </a>
+            </nav>     
+    
+            <div class="toggle-container">
+                <input type="checkbox" id="mode-toggle">
+                <label for="mode-toggle" class="toggle-label">
+                    <div class="toggle-slider">
+                        <img src="img/sol.png" alt="Modo Claro" class="mode-icon" id="icon-sol">
+                        <img src="img/luna.png" alt="Modo Oscuro" class="mode-icon hidden" id="icon-luna">
+                    </div>
+                </label>
+            </div>
+        </header>
+
+        <section class="productos">
+            <h2 class="titulo-productos">Explora y aprende con nuestras herramientas</h2>
+            <div class="contenedor-apps">
+                <div class="fila">
+                    <div class="carta-app"><a href="https://drive.google.com/" target="_blank" class="no-link-style"><img src="img/driveimg.png" alt="Google Drive"></a></div>
+                    <div class="carta-app"> <a href="https://translate.google.com" target="_blank" class="no-link-style"><img src="img/GoogleTranslateimg.png" alt="Google Translate"></a></div>
+                </div>
+                <div class="fila fila-central">
+                    <div class="carta-app"><a href="https://meet.google.com/" target="_blank" class="no-link-style"><img src="img/meetimg.png" alt="Google Meet"></a></div>
+                    <div class="carta-app central"><a href="https://mail.google.com/" target="_blank" class="no-link-style"><img src="img/gmailimg.png" alt="Gmail"></a></div>
+                    <div class="carta-app"><a href="https://docs.google.com/spreadsheets/" target="_blank" class="no-link-style"><img src="img/googlesheetsimg.png" alt="Google Sheets"></a></div>
+                </div>
+                <div class="fila">
+                    <div class="carta-app"><a href="https://sites.google.com/" target="_blank" class="no-link-style"><img src="img/sitesimg.png" alt="Google Sites"></a></div>
+                    <div class="carta-app"><a href="https://calendar.google.com/" target="_blank" class="no-link-style"><img src="img/calendarimg.png" alt="Google Calendar"></a></div>
+                </div>
+            </div>
+        </section>
+              
+        <section class="contenedor">
+            <!-- Primera sección (Google Docs) -->
+            <div class="fila">
+                <img src="img/documentsimg.png" alt="Google Documents" class="imagen-fondo">
+                <div class="contenido">
+                    <div class="icono-card">
+                        <img src="img/googledocsimg.png" alt="Google Docs">
+                    </div>
+                    <p class="texto">Redacta documentos potenciados por IA para ayudarte a ti y a tu equipo a crear contenido y colaborar en él.</p>
+                    <button class="btn-acceder"><a href="https://docs.google.com/document/" target="_blank" class="no-link-style">Acceder</a></button>
+                </div>
+            </div>
+    
+            <!-- Segunda sección (Google Forms) - Contenido a la izquierda, imagen a la derecha -->
+            <div class="fila">
+                <div class="contenido">
+                    <div class="icono-card">
+                        <img src="img/googleformsimg.png" alt="Google Forms">
+                    </div>
+                    <p class="texto">Crea fácilmente formularios y encuestas para recopilar datos y obtener estadísticas desde cualquier lugar.</p>
+                    <button class="btn-acceder"><a href="https://forms.google.com/" target="_blank" class="no-link-style">Acceder</a></button>
+                </div>
+                <img src="img/formsimg.png" alt="Google Forms" class="imagen-fondo">
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-logo">
+                <img src="img/logoclaro2.png" alt="Logo Claro" class="logo">
+            </div>
+            <hr class="footer-line">
+        
+            <div class="footer-content">
+                <!-- Acerca de (izquierda) -->
+                <div class="footer-section footer-left">
+                    <h3 class="footer-title">
+                        <a href="Index.html" class="no-link-style">
+                            <img src="img/grupo negro.png" alt="Grupo" class="icon acerca-icon">
+                            Acerca de
+                        </a>
+                    </h3>
+                    <p><a href="Index.html" class="no-link-style">Nuestra misión es organizar la información del mundo para que todos puedan acceder a ella y usarla.</a></p>
+                </div>
+        
+                <!-- Productos (centrado) -->
+                <div class="footer-section footer-center">
+                    <h3 class="footer-title center-title">
+                        <a href="Productos.html" class="no-link-style">
+                            <img src="img/paquete negro.png" alt="Paquete" class="icon productos-icon">
+                            Productos
+                        </a>
+                    </h3>
+                    <ul>
+                        <li>Aplicaciones incluidas</li><br>
+                        <li><a href="https://mail.google.com/" target="_blank" class="no-link-style">Gmail</a></li><br>
+                        <li><a href="https://translate.google.com" target="_blank" class="no-link-style">Translate</a></li><br>
+                        <li><a href="https://drive.google.com/" target="_blank" class="no-link-style">Drive</a></li><br>
+                        <li><a href="https://meet.google.com/" target="_blank" class="no-link-style">Meet</a></li><br>
+                        <li><a href="https://docs.google.com/document/" target="_blank" class="no-link-style">Documents</a></li><br>
+                        <li><a href="https://docs.google.com/spreadsheets/" target="_blank" class="no-link-style">Hoja de Cálculo</a></li><br>
+                        <li><a href="https://sites.google.com/" target="_blank" class="no-link-style">Sites</a></li><br>
+                        <li><a href="https://calendar.google.com/" target="_blank" class="no-link-style">Calendario</a></li><br>
+                        <li><a href="https://forms.google.com/" target="_blank" class="no-link-style">Forms</a></li>
+                    </ul>
+                </div>
+    
+                  <!-- Noticias (nuevo, derecha) -->
+                  <div class="footer-section footer-right">
+                    <h3 class="footer-title">
+                        <a href="Noticias.html" class="no-link-style">
+                            <img src="img/noticiasnegro.png" alt="Noticias" class="icon noticias-icon">
+                            Noticias
+                        </a>
+                    </h3>
+                    <p><a href="Noticias.html" class="no-link-style">Últimas novedades y actualizaciones</a></p>
+                </div>
+        
+                <!-- Precios (derecha) -->
+                <div class="footer-section footer-right">
+                    <h3 class="footer-title right-title">
+                        <a href="Precios.html" class="no-link-style">
+                            <img src="img/icono precio.png" alt="Precio" class="icon precios-icon">
+                            Precios
+                        </a>
+                    </h3>
+                    <p><a href="Precios.html" class="no-link-style">Elija una edición</a></p>
+                </div>
+                
+            </div>
+        </footer>
+
+        <script src="scriptproductos.js"></script> 
+</body>
+</html>
